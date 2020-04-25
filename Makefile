@@ -6,8 +6,7 @@ all:
 	wget --output-document=$(DESTINATION)  --continue $(SOURCE)
 	chmod +x $(DESTINATION)
 	./$(DESTINATION) --appimage-extract
-	mkdir -p AppDir/opt/application
-	cp -r squashfs-root/* AppDir/opt/application
-	export ARCH=x86_64 && bin/appimagetool.AppImage AppDir $(DESTINATION)
-	rm -rf AppDir/opt
+	rm -f squashfs-root/drawio.png
+	cp -r icon.svg squashfs-root/drawio.svg
+	export ARCH=x86_64 && bin/appimagetool.AppImage squashfs-root $(DESTINATION)
 	rm -rf squashfs-root
