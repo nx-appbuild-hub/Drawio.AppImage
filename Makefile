@@ -11,9 +11,6 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 PWD:=$(shell pwd)
 
-SOURCE="https://github.com/jgraph/drawio-desktop/releases/download/v13.0.1/draw.io-x86_64-13.0.1.AppImage"
-DESTINATION="Drawio.AppImage"
-
 all:
 
 	mkdir --parents $(PWD)/build
@@ -44,3 +41,6 @@ all:
 	cp --force --recursive $(PWD)/build/usr/share/* $(PWD)/build/squashfs-root/usr/share
 
 	export ARCH=x86_64 && $(PWD)/bin/appimagetool.AppImage $(PWD)/build/squashfs-root $(PWD)/Drawio.AppImage
+
+clean:
+	rm -rf $(PWD)/build
