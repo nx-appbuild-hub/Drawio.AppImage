@@ -16,7 +16,7 @@ all: clean
 	mkdir --parents $(PWD)/build/Boilerplate.AppDir/drawio
 	apprepo --destination=$(PWD)/build appdir boilerplate libatk1.0-0 libatk-bridge2.0-0 libgtk-3-0
 
-	wget --output-document=$(PWD)/build/Drawio.AppImage https://github.com/jgraph/drawio-desktop/releases/download/v13.9.9/draw.io-x86_64-13.9.9.AppImage
+	wget --output-document=$(PWD)/build/Drawio.AppImage https://github.com/jgraph/drawio-desktop/releases/download/v14.1.8/draw.io-x86_64-14.1.8.AppImage
 	chmod +x $(PWD)/build/Drawio.AppImage
 	cd $(PWD)/build && $(PWD)/build/Drawio.AppImage --appimage-extract
 
