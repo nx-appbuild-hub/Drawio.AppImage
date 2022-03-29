@@ -17,7 +17,8 @@ all: clean init
 
 	mkdir --parents $(PWD)/build/Boilerplate.AppDir/drawio
 	$(PWD)/bin/Apprepo.AppImage --destination=$(PWD)/build appdir boilerplate \
-		libgdk-pixbuf2.0-0 libatk1.0-0 libatk-bridge2.0-0 libgtk2.0-0
+	    libgdk-pixbuf2.0-0 libatk1.0-0 libatk-bridge2.0-0 libgtk2.0-0 \
+	    libreadline8 at-spi2-core libpango-1.0-0 libselinux1
 
 
 	wget --output-document=$(PWD)/build/Drawio.AppImage https://github.com/jgraph/drawio-desktop/releases/download/v17.2.1/drawio-x86_64-17.2.1.AppImage
