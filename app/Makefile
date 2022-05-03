@@ -21,7 +21,7 @@ all: clean init
 	    libreadline8 at-spi2-core libpango-1.0-0 libselinux1
 
 
-	wget --output-document=$(PWD)/build/Drawio.AppImage https://github.com/jgraph/drawio-desktop/releases/download/v17.2.1/drawio-x86_64-17.2.1.AppImage
+	wget --output-document=$(PWD)/build/Drawio.AppImage https://github.com/jgraph/drawio-desktop/releases/download/v17.4.2/drawio-x86_64-17.4.2.AppImage
 	chmod +x $(PWD)/build/Drawio.AppImage
 	cd $(PWD)/build && $(PWD)/build/Drawio.AppImage --appimage-extract
 
