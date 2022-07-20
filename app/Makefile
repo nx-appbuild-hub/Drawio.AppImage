@@ -18,8 +18,8 @@ all: clean init
 	mkdir --parents $(PWD)/build/Boilerplate.AppDir/drawio
 	$(PWD)/bin/Apprepo.AppImage --destination=$(PWD)/build appdir boilerplate \
 	    libgdk-pixbuf2.0-0 libatk1.0-0 libatk-bridge2.0-0 libgtk2.0-0 \
-	    libreadline8 at-spi2-core libpango-1.0-0 libselinux1
-
+	    libreadline8 at-spi2-core libpango-1.0-0 libgtk-3-0 libgtk-3-0 \
+		libwayland-cursor0 libselinux1 
 
 	wget --output-document=$(PWD)/build/Drawio.AppImage https://github.com/jgraph/drawio-desktop/releases/download/v17.4.2/drawio-x86_64-17.4.2.AppImage
 	chmod +x $(PWD)/build/Drawio.AppImage
@@ -37,11 +37,11 @@ all: clean init
 	cp --force --recursive $(PWD)/build/squashfs-root/usr/lib/*     $(PWD)/build/Boilerplate.AppDir/lib64
 	cp --force --recursive $(PWD)/build/squashfs-root/*             $(PWD)/build/Boilerplate.AppDir/drawio
 
-	rm -rf $(PWD)/build/Boilerplate.AppDir/drawio/usr
-	rm -rf $(PWD)/build/Boilerplate.AppDir/drawio/AppRun
-	rm -rf $(PWD)/build/Boilerplate.AppDir/*.desktop
-	rm -rf $(PWD)/build/Boilerplate.AppDir/drawio/drawio.png || true
-	rm -rf $(PWD)/build/Boilerplate.AppDir/drawio.png || true
+	rm -rf $(PWD)/build/Boilerplate.AppDir/drawio/usr         || true
+	rm -rf $(PWD)/build/Boilerplate.AppDir/drawio/AppRun      || true
+	rm -rf $(PWD)/build/Boilerplate.AppDir/*.desktop          || true
+	rm -rf $(PWD)/build/Boilerplate.AppDir/drawio/drawio.png  || true
+	rm -rf $(PWD)/build/Boilerplate.AppDir/drawio.png         || true
 
 	cp $(PWD)/AppDir/drawio.svg                          $(PWD)/build/Boilerplate.AppDir/drawio.svg
 	mv $(PWD)/build/Boilerplate.AppDir/drawio/*.desktop  $(PWD)/build/Boilerplate.AppDir
